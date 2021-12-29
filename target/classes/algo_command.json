@@ -1,0 +1,25 @@
+{
+  "name": "algo",
+  "description": "Maybe a different algorithm will fix your down in the dumps luck...",
+  "autocomplete": true,
+  "options":
+          [
+            {
+              "name": "algo_type",
+              "description": "Input.  Who you gonna choose?",
+              "type": 3,
+              "required": false,
+              "choices":
+              [
+                {
+                  "name": "basic",
+                  "value": "basic"
+                },
+                {
+                  "name": "crypto",
+                  "value": "secureBasic"
+                }
+              ]
+            }
+          ]
+}

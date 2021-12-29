@@ -1,0 +1,48 @@
+{
+  "name": "roll",
+  "description": "Command. Roll dem dice!",
+  "autocomplete": true,
+  "options": [
+    {
+      "name": "gm",
+      "description": "SubCommand. Roll all sneky snek like with ephemeral messages.  Only you will see the results",
+      "type": 1,
+      "required": false,
+      "autocomplete": true
+    },
+    {
+      "name": "quantity",
+      "description": "Input. Lazy jerk, fine I'll roll more than one dice",
+      "type": 4,
+      "required": false,
+      "min_value": 1,
+      "max_value": 42
+    },
+    {
+      "name": "dice_type",
+      "description": "Input. What kinda dice?  Default is a 20",
+      "type": 3,
+      "required": false,
+      "choices":
+              [
+                {
+                  "name": "d20",
+                  "value": "d_20"
+                },
+                {
+                  "name": "HiLo",
+                  "value": "hi_lo"
+                }
+              ]
+    },
+    {
+      "name": "modifier",
+      "description": "Input. Ugh, you're even making me do basic math for you?",
+      "type": 4,
+      "required": false,
+      "min_value": -999,
+      "max_value": 999
+    }
+
+  ]
+}
