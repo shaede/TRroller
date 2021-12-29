@@ -9,7 +9,7 @@ Different Algos		| Change the algorithm used to generate the random numbers
 Different Distros	| Change the ranom number distribution
 
 ## Using the bot
-###Roll
+### Roll
 The roll command has a couple options.  Becuse it uses the slash command interface with discrod, it will support autocomplete.  The basic structure of the command is as follows:
 * Roll
 	* role_type (String)
@@ -27,12 +27,13 @@ The roll command has a couple options.  Becuse it uses the slash command interfa
 		* ints (default 0)
 		
 With this command structure in mind, here are a few sample rolls:
-	/roll (rolls a single d20 with no modifiers)
-	/roll gm (rolls a single d20 ephemerally)
+
+	//roll (rolls a single d20 with no modifiers)
+	//roll gm (rolls a single d20 ephemerally)
 
 Ugh, I'll finish this section eventually
 
-###Jail
+### Jail
 The jail command has plenty of hidden features designed to improve your luck.  It will let you reseed the dice, change the algorithm, and change the random number distribution.  
 * jail
 	* reseed 
