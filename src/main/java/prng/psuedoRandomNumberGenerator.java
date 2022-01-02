@@ -31,6 +31,22 @@ public class psuedoRandomNumberGenerator {
         //calculate according to the current distro
         return m_randomness.nextNumber(20);
     }
+    public int roll4()
+    {
+        return m_randomness.nextNumber(4);
+    }
+    public int roll6()
+    {
+        return m_randomness.nextNumber(6);
+    }
+    public int roll8()
+    {
+        return m_randomness.nextNumber(8);
+    }
+    public int roll12()
+    {
+        return m_randomness.nextNumber(12);
+    }
     public String rollHiLo()
     {
         return m_randomness.nextNumber(2) == 1 ? "Low" : "High";

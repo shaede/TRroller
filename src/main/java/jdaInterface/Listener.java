@@ -79,10 +79,10 @@ public class Listener extends ListenerAdapter {
             else
                 eventString = eventString.concat("- ");
             eventString = eventString.concat(m_mod + "*: ");
-
+            int t = 0;
             switch (m_type) {
                 default:
-                    int t = prng.roll20();
+                    t = prng.roll20();
                     result +=t;
                     eventString = eventString.concat(t + " ");
                     for (int i = 1; i < multiplier; i++) {
@@ -93,16 +93,52 @@ public class Listener extends ListenerAdapter {
                     eventString = m_mod != 0 ? eventString.concat(" + " + m_mod + " = **" + result + "**" ) : eventString.concat(" = **" + result + "**");
                     break;
                 case "d6":
-                    eventString = "No d6 implementation quite yet";
+                    t = prng.roll6();
+                    result+=t;
+                    eventString = eventString.concat(t + " ");
+                    for (int i = 1; i < multiplier; i++)
+                    {
+                        t = prng.roll6();
+                        result += t;
+                        eventString = eventString.concat("+ " + t + " ");
+                    }
+                    eventString = m_mod != 0 ? eventString.concat(" + " + m_mod + " = **" + result + "**" ) : eventString.concat(" = **" + result + "**");
                     break;
                 case "d4":
-                    eventString = "No d4 implementation quite yet";
+                    t = prng.roll4();
+                    result+=t;
+                    eventString = eventString.concat(t + " ");
+                    for (int i = 1; i < multiplier; i++)
+                    {
+                        t = prng.roll4();
+                        result += t;
+                        eventString = eventString.concat("+ " + t + " ");
+                    }
+                    eventString = m_mod != 0 ? eventString.concat(" + " + m_mod + " = **" + result + "**" ) : eventString.concat(" = **" + result + "**");
                     break;
                 case "d8":
-                    eventString = "No d8 implementation quite yet";
+                    t = prng.roll8();
+                    result+=t;
+                    eventString = eventString.concat(t + " ");
+                    for (int i = 1; i < multiplier; i++)
+                    {
+                        t = prng.roll8();
+                        result += t;
+                        eventString = eventString.concat("+ " + t + " ");
+                    }
+                    eventString = m_mod != 0 ? eventString.concat(" + " + m_mod + " = **" + result + "**" ) : eventString.concat(" = **" + result + "**");
                     break;
                 case "d12":
-                    eventString = "No d12 implementation quite yet";
+                    t = prng.roll12();
+                    result+=t;
+                    eventString = eventString.concat(t + " ");
+                    for (int i = 1; i < multiplier; i++)
+                    {
+                        t = prng.roll12();
+                        result += t;
+                        eventString = eventString.concat("+ " + t + " ");
+                    }
+                    eventString = m_mod != 0 ? eventString.concat(" + " + m_mod + " = **" + result + "**" ) : eventString.concat(" = **" + result + "**");
                     break;
             }
         }
@@ -148,7 +184,7 @@ public class Listener extends ListenerAdapter {
                 eventString = eventString.concat("Still working on your requested distro.  Sorry.  Distro is still " + prng.getM_currentDistro());
                 break;
         }
-        return event.reply(eventString).setEphemeral(true).complete();
+        return (reseed && algo.equals("nochange") && distro.equals("nochange")) ? event.reply(eventString).setEphemeral(true).complete() : event.reply(eventString).complete();
     }
     private InteractionHook algo(SlashCommandEvent event, OptionMapping algo_type){
             String eventString;
