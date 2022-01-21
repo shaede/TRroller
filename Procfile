@@ -1,1 +1,1 @@
-worker: java $JAVA_OPTS -jar target/diceRollerBot.shaede-1.0-SNAPSHOT.jar
+worker: java $JAVA_OPTS -jar /app/target/diceRollerBot.shaede-1.0-SNAPSHOT.jar
