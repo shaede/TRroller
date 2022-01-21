@@ -26,16 +26,17 @@ import static net.dv8tion.jda.api.interactions.commands.OptionType.*;
 
 public class diceRoller {
 
-    public static void main(String[] args) throws LoginException {
+    public static void main(String[] args) {
         //System.out.print("ID: " + System.getProperty("token") + "\tGlobal: " + System.getProperty("global") + "\tlocal: " + System.getProperty("local"));
         try {
+            if (System.getProperty("token").isEmpty()) throw new LoginException();
             /*Create the JDA instance*/
             JDA jda = JDABuilder.createLight(System.getProperty("token"), GatewayIntent.GUILD_MESSAGES)
                     .addEventListeners(new Listener())
                     .setActivity(Activity.playing("Engaged and ready to roll"))
                     .build();
             jda.awaitReady();
-
+            System.out.println("JDA listener successfully initialized");
         /*Add the commands.  Current Commands:
             //roll: roll with options
             //troll: roll with subcommand rather than options
@@ -94,6 +95,10 @@ public class diceRoller {
                 commands.queue();
             }
         } catch (InterruptedException e) {
+            System.err.println("Failed to continue connection");
+            e.printStackTrace();
+        } catch (LoginException e) {
+            System.err.println("Invalid login token " + System.getProperty("token"));
             e.printStackTrace();
         }
     }
