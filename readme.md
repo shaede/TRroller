@@ -9,8 +9,13 @@ Different Algos		| Change the algorithm used to generate the random numbers
 Different Distros	| Change the ranom number distribution
 
 ## Using the bot
+The base state of the TRoller bot uses the discord slash command API, which means that the EventListener is only triggered upon a slash command received.  Note that the Discord slash command FAQ is located here:
+https://support.discord.com/hc/en-us/articles/1500000368501-Slash-Commands-FAQ#:~:text=Slash%20Commands%20are%20the%20new,command%20right%20the%20first%20time.
+
+Note that slash commands support auto and tab complete in an attempt to make the user's life easier.  The slah command user interface also provides a list of options for each command event so the user is not left to guess what will and will not work.  
+
 ### Roll
-The roll command has a couple options.  Becuse it uses the slash command interface with discrod, it will support autocomplete.  The basic structure of the command is as follows:
+The roll command has a couple options.  Becuse it uses the slash command interface with discord, it will support autocomplete.  The basic structure of the command is as follows:
 * Roll
 	* role_type (String)
 		* gm (if this option is not used, gm is not enabled)
@@ -19,11 +24,11 @@ The roll command has a couple options.  Becuse it uses the slash command interfa
 	* dice_type
 		* d20 (default)
 		* hiLow
-		* d6 (TODO)
-		* d4 (TODO)
-		* d8 (TODO)
-		* d12 (TODO)
-	* modifier (int)
+		* d6 
+		* d4 
+		* d8 
+		* d12 
+	* modifier (signed int)
 		* ints (default 0)
 		
 With this command structure in mind, here are a few sample rolls:
@@ -49,6 +54,10 @@ The jail command has plenty of hidden features designed to improve your luck.  I
 		* beta (TODO)
 		
 Again, I'll... finish this eventually?
+
+## Development
+This bot uses Java and interfaces with Discord through the JDA interface.  JDA API documentation can be located here:
+https://github.com/DV8FromTheWorld/JDA
 
 ## License 
 MIT 
