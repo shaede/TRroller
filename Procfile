@@ -1,1 +1,1 @@
-worker: java $JAVA_OPTS -cp target/classes/:target/dependency/* diceRollerBot.shaede
+worker: java $JAVA_OPTS -cp target/classes/:target/dependency/* diceRoller.class
