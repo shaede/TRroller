@@ -1,1 +1,1 @@
-worker: java $JAVA_OPTS -cp target/classes:target/dependency/* com.discordbot.diceRollerBot.shaede.diceRoller
+worker: java $JAVA_OPTS -cp target/classes:target/dependency/* com.discordbot:diceRollerBot.shaede.diceRoller
