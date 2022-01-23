@@ -128,6 +128,18 @@ public class Listener extends ListenerAdapter {
                     }
                     eventString = m_mod != 0 ? eventString.concat(" + " + m_mod + " = **" + result + "**" ) : eventString.concat(" = **" + result + "**");
                     break;
+                case "d10":
+                    t = prng.roll10();
+                    result+=t;
+                    eventString = eventString.concat(t + " ");
+                    for (int i = 1; i < multiplier; i++)
+                    {
+                        t = prng.roll10();
+                        result += t;
+                        eventString = eventString.concat("+ " + t + " ");
+                    }
+                    eventString = m_mod != 0 ? eventString.concat(" + " + m_mod + " = **" + result + "**" ) : eventString.concat(" = **" + result + "**");
+                    break;
                 case "d12":
                     t = prng.roll12();
                     result+=t;
@@ -135,6 +147,18 @@ public class Listener extends ListenerAdapter {
                     for (int i = 1; i < multiplier; i++)
                     {
                         t = prng.roll12();
+                        result += t;
+                        eventString = eventString.concat("+ " + t + " ");
+                    }
+                    eventString = m_mod != 0 ? eventString.concat(" + " + m_mod + " = **" + result + "**" ) : eventString.concat(" = **" + result + "**");
+                    break;
+                case "d100":
+                    t = prng.roll100();
+                    result+=t;
+                    eventString = eventString.concat(t + " ");
+                    for (int i = 1; i < multiplier; i++)
+                    {
+                        t = prng.roll100();
                         result += t;
                         eventString = eventString.concat("+ " + t + " ");
                     }

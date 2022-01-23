@@ -47,6 +47,13 @@ public class psuedoRandomNumberGenerator {
     {
         return m_randomness.nextNumber(12);
     }
+    public int roll10() {
+        return m_randomness.nextNumber(10);
+    }
+    public int roll100() {
+        return m_randomness.nextNumber(100);
+    }
+
     public String rollHiLo()
     {
         return m_randomness.nextNumber(2) == 1 ? "Low" : "High";
@@ -109,4 +116,7 @@ public class psuedoRandomNumberGenerator {
         //TODO
         return m_num;
     }
+
+
+
 }

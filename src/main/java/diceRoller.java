@@ -53,7 +53,9 @@ public class diceRoller {
                                     .addChoice("d6", "d6")
                                     .addChoice("d4", "d4")
                                     .addChoice("d8", "d8")
+                                    .addChoice("d10", "d10")
                                     .addChoice("d12", "d12")
+                                    .addChoice("d100", "d100")
                     ,            new OptionData(INTEGER, "modifier", "Input. Ugh, you're even making me do basic math for you?", false));
 
 
