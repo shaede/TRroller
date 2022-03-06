@@ -43,6 +43,8 @@ public class diceRoller {
             //algo
             //dice-jail
             */
+             CommandData cue_command = new CommandData("cue", "Rollin' Numbers an' Letters!");
+
              CommandData roll_command_options = new CommandData("roll","Command. Roll dem dice!" )
                     .addOptions( new OptionData(STRING, "roll_type","How you gonna roll?", false)
                                     .addChoice("gm", "gm")
@@ -84,7 +86,7 @@ public class diceRoller {
             if (System.getProperty("global").isEmpty() || System.getProperty("global").equalsIgnoreCase("true")) {
                 System.out.println("Adding global slash commands");
                 CommandListUpdateAction commands = jda.updateCommands();
-                commands = commands.addCommands(roll_command_options, jail_command);
+                commands = commands.addCommands(roll_command_options, jail_command, cue_command);
                 commands.queue();
             }
             if(System.getProperty("local")!=null) {
@@ -93,7 +95,7 @@ public class diceRoller {
                 System.out.println("Adding local slash commands to " + jdaGuild);
 
                 CommandListUpdateAction commands = jdaGuild.updateCommands();
-                commands = commands.addCommands(roll_command_options, jail_command);
+                commands = commands.addCommands(roll_command_options, jail_command, cue_command);
                 commands.queue();
             }
         } catch (InterruptedException e) {

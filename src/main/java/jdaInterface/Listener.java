@@ -50,10 +50,18 @@ public class Listener extends ListenerAdapter {
                         , e_distro != null ? e_distro.getAsString() : "nochange"
                 );
             }
+            case "cue":
+            {
+                cue(event);
+            }
         }
     }
 
-
+    private InteractionHook cue(SlashCommandEvent event)
+    {
+        String eventString = prng.rollLetter() + String.valueOf(prng.roll30());
+        return event.reply(eventString).setEphemeral(true).complete();
+    }
     private InteractionHook roll(SlashCommandEvent event, int m_qty, String m_type, int m_mod, boolean m_gm) {
         //event.getHook().setEphemeral(m_gm); //sets ephemeral if gm is set to true
         String eventString = "*Rolling ";

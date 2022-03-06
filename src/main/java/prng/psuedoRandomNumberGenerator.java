@@ -53,6 +53,15 @@ public class psuedoRandomNumberGenerator {
     public int roll100() {
         return m_randomness.nextNumber(100);
     }
+    public int roll30()
+    {
+        return m_randomness.nextNumber(30);
+    }
+    public char rollLetter()
+    {
+        return (char) (m_randomness.nextNumber(17) + 64);
+    }
+
 
     public String rollHiLo()
     {
