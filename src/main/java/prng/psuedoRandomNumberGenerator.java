@@ -65,7 +65,8 @@ public class psuedoRandomNumberGenerator {
 
     public String rollHiLo()
     {
-        return m_randomness.nextNumber(2) == 1 ? "Low" : "High";
+        int num = m_randomness.nextNumber(100);
+        return  (num <= 50 ? "Low" : "High");
     }
     public void setM_currentAlgorithm(algorithms currentAlgorithm) {
 
