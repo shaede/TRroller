@@ -33,8 +33,10 @@ The roll command has a couple options.  Becuse it uses the slash command interfa
 		
 With this command structure in mind, here are a few sample rolls:
 
-	//roll (rolls a single d20 with no modifiers)
-	//roll gm (rolls a single d20 ephemerally)
+	/roll (rolls a single d20 with no modifiers)
+	/roll gm (rolls a single d20 ephemerally)
+	/roll modifier:7
+	/roll dice_type:d20
 
 Ugh, I'll finish this section eventually
 
