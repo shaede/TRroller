@@ -1,4 +1,5 @@
 # TRroller
+Zenith Exotech Rules!!!
 TRroller is a bit too overzealous discord dice bot written using the JDA library.  It provides the following features:
 Feature 			| Description
 ------- 			| -----------
@@ -60,6 +61,8 @@ Again, I'll... finish this eventually?
 ## Development
 This bot uses Java and interfaces with Discord through the JDA interface.  JDA API documentation can be located here:
 https://github.com/DV8FromTheWorld/JDA
+
+gorizont intellecta drools
 
 ## License 
 MIT 
